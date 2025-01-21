@@ -1,7 +1,7 @@
 <script setup>
 import ButtonCreate from "@/components/UI/ButtonCreate.vue";
-
-const clickButton = () => console.log('Клик по кнопке');
+const emit = defineEmits(['click']);
+const clickButton = () => emit('click');
 </script>
 
 <template>
