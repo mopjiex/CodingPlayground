@@ -2,7 +2,7 @@
 defineProps({
     title: { type: String, default: null },
     description: { type: String, default: null },
-    date: { type: String, default: null }
+    creationDate: { type: String, default: null }
 });
 </script>
 
@@ -15,7 +15,7 @@ defineProps({
             </div>
         </div>
         <div>
-            <p class="text-sm">{{ date }}</p>
+            <p class="text-sm">{{ creationDate }}</p>
         </div>
     </div>
 </template>

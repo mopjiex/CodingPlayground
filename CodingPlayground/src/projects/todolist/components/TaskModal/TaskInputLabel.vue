@@ -12,8 +12,8 @@ const value = defineModel('value');
 </script>
 
 <template>
-    <label class="text-center">
-        <span class="text-xl"> {{ labelText }}</span>
+    <label class="">
+        <span class="inline-block text-xl mb-[15px]"> {{ labelText }}</span>
         <InputTodo v-model:value="value"/>
     </label>
 </template>

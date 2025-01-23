@@ -1,5 +1,5 @@
 <script setup>
-import ButtonCreate from "@/components/UI/ButtonCreate.vue";
+import ButtonCreate from "@/components/UI/Buttons/ButtonCreate.vue";
 const emit = defineEmits(['click']);
 const clickButton = () => emit('click');
 </script>

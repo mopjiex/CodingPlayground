@@ -6,22 +6,17 @@ import TaskCreateButton from "@/projects/todolist/components/TodoHeader/TaskCrea
 import { useTodoStore } from "@/stores/useTodoStore.js";
 import { storeToRefs } from "pinia";
 
-const { todoItems } = storeToRefs(useTodoStore());
+const { isShowModal } = storeToRefs(useTodoStore());
 const formattedDate = ref(getFormattedDate());
 
-const testClick = () => {
-    todoItems.value.push({
-        id: Math.random(),
-        title: 'Какой-то заголовок',
-        description: 'Какое-то описание',
-        date: '22.01.2025'
-    })
+const openModal = () => {
+    isShowModal.value = true;
 }
 </script>
 
 <template>
     <div class="flex items-center justify-between">
         <TaskDayInfo :date-info="formattedDate" />
-        <TaskCreateButton @click="testClick" />
+        <TaskCreateButton @click="openModal" />
     </div>
 </template>
