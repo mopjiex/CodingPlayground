@@ -13,7 +13,7 @@ const tabs = [
 
 const currentTabs = ref(0);
 
-const tt = (index) => {
+const switchTab = (index) => {
     currentTabs.value = index
     activeTab.value = tabs[index];
 };
@@ -27,7 +27,7 @@ const tt = (index) => {
                :class="currentTabs === index ? 'text-[#1558cf]' : ''"
                v-for="(tab, index) in tabs"
                :key="tab.id"
-               @click="tt(index)"
+               @click="switchTab(index)"
            >
                 {{ tab.name }}
            </li>

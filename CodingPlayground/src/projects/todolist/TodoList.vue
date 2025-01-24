@@ -11,7 +11,15 @@ import TaskTabs from "@/projects/todolist/components/TaskTabs.vue";
 
 const { todoItems, isShowModal, activeTab } = storeToRefs(useTodoStore());
 
-
+const filteredTodoItems = computed(() => {
+    if(activeTab.value.name === 'Все') return todoItems.value;
+    else if(activeTab.value.name === 'Открытые') return todoItems.value.filter(item => {
+        if(!item.isFinished) return item;
+    })
+    else return todoItems.value.filter(item => {
+        if(item.isFinished) return item;
+    })
+})
 </script>
 
 <template>
@@ -21,7 +29,7 @@ const { todoItems, isShowModal, activeTab } = storeToRefs(useTodoStore());
             <div class="flex justify-center items-center min-h-screen">
                 <div class="w-[500px] min-h-[552px] p-3 rounded-xl bg-white">
                     <TodoHeader class="mb-6"/>
-
+                    {{ activeTab }}
                     <TaskTabs class="mb-[20px]"/>
                     <div class="task-card max-h-[500px] overflow-y-auto flex flex-col gap-[15px]">
                         <div class="" v-if="todoItems.length < 1">
@@ -29,11 +37,13 @@ const { todoItems, isShowModal, activeTab } = storeToRefs(useTodoStore());
                         </div>
                         <TaskCard
                             v-else
-                            v-for="todoItem in todoItems"
+                            v-for="(todoItem, index) in filteredTodoItems"
                             :key="todoItem.id"
+                            :index="index"
                             :title="todoItem.title"
                             :description="todoItem.description"
                             :creation-date="todoItem.creationDate"
+                            :is-finished="todoItems.isFinished"
                         />
                     </div>
                 </div>

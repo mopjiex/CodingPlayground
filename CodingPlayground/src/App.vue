@@ -3,7 +3,9 @@ import HomeView from '@/views/HomeView.vue'
 </script>
 
 <template>
-    <HomeView/>
+    <div class="font-jost">
+        <HomeView/>
+    </div>
 </template>
 
 

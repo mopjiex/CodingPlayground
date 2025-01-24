@@ -36,7 +36,7 @@ const closeModal = () => emit('update:showModal', false);
 
 <template>
     <div class="absolute min-h-screen flex items-center justify-center w-full bg-[#1a1d3a33]" v-if="showModal">
-        <div class="bg-red-300 py[20px] px-[10px] w-[400px] h-[400px] rounded-xl">
+        <div class="bg-[#D0E8F2] border-2 py[20px] px-[10px] w-[400px] h-[370px] rounded-xl">
             <div class="modal-content flex flex-col items w-full h-full py-[20px] gap-[20px]">
                 <h2 class="text-center text-2xl">Добавление новой записи</h2>
                 <div class="flex flex-col gap-[20px]">
