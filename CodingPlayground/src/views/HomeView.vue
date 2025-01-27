@@ -1,6 +1,6 @@
 <script setup>
 import TodoList from "@/projects/todolist/TodoList.vue";
-import Calculator from "@/projects/calculator/Calculator.vue";
+import Calculator from "@/projects/calculator/view/Calculator.vue";
 </script>
 
 <template>
